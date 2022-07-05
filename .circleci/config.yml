@@ -1,36 +1,37 @@
 version: 2.1
 
-jobs: 
+jobs:
   build:
-    docker: 
+    docker:
       - image: cimg/base:stable
     steps:
-      -run : echo  build stage
-            
+      - checkout
+      - run: npm i
+      - run: npm run lint
 
   test:
     docker:
       - image: cimg/base:stable
     steps:
-      -run : echo  test stage
-
-
+      - checkout
+      - run: npm i
+      - run: npm run test
 
 analyze:
   docker:
     - image: cimg/base:stable
   steps:
-    - run : echo anaylze stage
-
+    - checkout
+    - run: npm audit
 
 workflows:
   my_workflows:
     jobs:
-      - build 
-      
+      - build
+
       - test:
           requires:
-            - build        
+            - build
       - analyze:
           requires:
-           - test
+            - test
