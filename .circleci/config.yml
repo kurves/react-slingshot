@@ -17,12 +17,12 @@ jobs:
       - run: npm i
       - run: npm run test
 
-analyze:
-  docker:
-    - image: cimg/base:stable
-  steps:
-    - checkout
-    - run: npm audit
+  analyze:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: npm audit
 
 workflows:
   my_workflows:
