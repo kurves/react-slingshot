@@ -5,14 +5,14 @@ jobs:
     docker: 
       - image: cimg/base:stable
     steps:
-      -run : echo " build stage"
+      -run : echo  build stage
             
 
   test:
     docker:
       - image: cimg/base:stable
     steps:
-      -run : echo " test stage" 
+      -run : echo  test stage
 
 
 
@@ -20,7 +20,7 @@ analyze:
   docker:
     - image: cimg/base:stable
   steps:
-    - run : echo "anaylze stage"
+    - run : echo anaylze stage
 
 
 workflows:
