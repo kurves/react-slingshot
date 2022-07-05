@@ -18,9 +18,9 @@ jobs:
 
 analyze:
   docker:
-     - image: cimg/base:stable
-   steps:
-     - run : echo "anaylze stage"
+    - image: cimg/base:stable
+  steps:
+    - run : echo "anaylze stage"
 
 
 workflows:
